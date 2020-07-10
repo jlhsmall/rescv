@@ -124,9 +124,9 @@ public:
     ~instruction_decode_manager(){
         if(rtype!=NULL)delete rtype;
         else if(itype!=NULL)delete itype;
-        else if(itype!=NULL)delete stype;
-        else if(itype!=NULL)delete btype;
-        else if(itype!=NULL)delete utype;
+        else if(stype!=NULL)delete stype;
+        else if(btype!=NULL)delete btype;
+        else if(utype!=NULL)delete utype;
         else delete jtype;
     }
 };
