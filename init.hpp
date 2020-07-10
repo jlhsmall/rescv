@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-unsigned char memory[300000];
+unsigned char memory[140000];
 void init(){
     std::string s;
     int pos;
