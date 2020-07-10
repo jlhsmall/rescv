@@ -7,7 +7,7 @@
 #include "memoryaccess.hpp"
 #include "writeback.hpp"
 int main() {
-    freopen("r.in","r",stdin);
+    //freopen("r.in","r",stdin);
     init();
     bool _jump=true;unsigned _pc=0;
     while(1){
