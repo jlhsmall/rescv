@@ -1,5 +1,8 @@
-#include <iostream>
-#include <string>
+//
+// Created by Jlhsmall on 2020/7/13.
+//
+
+#include "init.h"
 unsigned char memory[140000];
 void init(){
     std::string s;

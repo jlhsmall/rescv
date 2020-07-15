@@ -1,7 +1,5 @@
 cmake_minimum_required(VERSION 3.10.2)
 project(riscv)
 set(CMAKE_CXX_STANDARD 14)
-SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}  -Ofast")
-set(src_dir
-        main.cpp init.hpp instructiondecode.hpp execute.hpp memoryaccess.hpp writeback.hpp type.hpp)
-add_executable(code ${src_dir})
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}  -g")
+add_executable(code main.cpp init.h instructionfetch.h instructiondecode.h execute.h memoryaccess.h writeback.h type.h instructionfetch.cpp instructiondecode.cpp execute.cpp memoryaccess.cpp writeback.cpp init.cpp type.cpp predictor.cpp predictor.h)
