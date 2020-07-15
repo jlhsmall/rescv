@@ -7,7 +7,7 @@
 #include "memoryaccess.h"
 #include "writeback.h"
 int main() {
-    freopen("r.in","r",stdin);
+    //freopen("r.in","r",stdin);
     init();
     jump=1;
     while(wbm.wait!=-1){
