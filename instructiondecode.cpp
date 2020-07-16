@@ -88,7 +88,7 @@ void instruction_decode_manager::get(){
             else stype->vrs2=mam.val;
         }
         if(btype!=NULL){
-            if(btype->vrs1==mam.rd)btype->vrs1=mam.val;
+            if(btype->rs1==mam.rd)btype->vrs1=mam.val;
             else btype->vrs2=mam.val;
         }
         ifm.decoded=1;
@@ -146,7 +146,7 @@ void instruction_decode_manager::get(){
             stype=new Stype(ifm.instruction);
             stype->vrs1=get_reg_val(stype->rs1,wait);
             stype->vrs2=get_reg_val(stype->rs2,wait);
-            if(wait)++em.wait,ifm.decoded=2;
+            if(wait)wait=0,++em.wait,ifm.decoded=2;
             break;
         case BEQ:
         case BNE:
@@ -157,7 +157,7 @@ void instruction_decode_manager::get(){
             btype=new Btype(ifm.instruction);
             btype->vrs1=get_reg_val(btype->rs1,wait);
             btype->vrs2=get_reg_val(btype->rs2,wait);
-            if(wait)++em.wait,ifm.decoded=2;
+            if(wait)wait=0,++em.wait,ifm.decoded=2;
             if(pred[btype->_pc&15u].jump_or_not())pc=btype->_pc+btype->imm,jump=1;
             break;
         case LUI:

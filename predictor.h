@@ -21,7 +21,7 @@ public:
     }counter[4];
     static int nxt[4][2];
     int cur;
-    unsigned suc,tot;
+    static unsigned suc,tot;
     bool jump_or_not(){
         return counter[cur].val>=2;
     }
