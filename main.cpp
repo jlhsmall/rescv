@@ -9,7 +9,7 @@
 #include "predictor.h"
 //unsigned  reg2[32];
 int main() {
-    freopen("r.in","r",stdin);
+    //freopen("r.in","r",stdin);
     //freopen("w2.out","w",stdout);
     init();
     jump=1;
