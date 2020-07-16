@@ -31,7 +31,7 @@ int main() {
     //    }
     }
     std::cout<<(reg[10] & 255)<<std::endl;
-    pred[0].get_suc_rate();
+    //pred[0].get_suc_rate();
    /* while(1){
          ifm(_jump,_pc);
         if(ifm.instruction==){
