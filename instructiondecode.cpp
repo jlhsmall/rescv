@@ -158,7 +158,7 @@ void instruction_decode_manager::get(){
             btype->vrs1=get_reg_val(btype->rs1,wait);
             btype->vrs2=get_reg_val(btype->rs2,wait);
             if(wait)wait=0,++em.wait,ifm.decoded=2;
-            if(pred[btype->_pc&15u].jump_or_not())pc=btype->_pc+btype->imm,jump=1;
+            if(pred[btype->_pc>>2&7u].jump_or_not())pc=btype->_pc+btype->imm,jump=1;
             break;
         case LUI:
         case AUIPC:

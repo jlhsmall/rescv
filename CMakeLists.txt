@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10.2)
 project(riscv)
 set(CMAKE_CXX_STANDARD 14)
-SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}  -g")
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}  -Ofast")
 add_executable(code main.cpp init.h instructionfetch.h instructiondecode.h execute.h memoryaccess.h writeback.h type.h instructionfetch.cpp instructiondecode.cpp execute.cpp memoryaccess.cpp writeback.cpp init.cpp type.cpp predictor.cpp predictor.h)

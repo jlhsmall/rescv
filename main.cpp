@@ -6,9 +6,10 @@
 #include "execute.h"
 #include "memoryaccess.h"
 #include "writeback.h"
+#include "predictor.h"
 //unsigned  reg2[32];
 int main() {
-  //  freopen("r.in","r",stdin);
+    freopen("r.in","r",stdin);
     //freopen("w2.out","w",stdout);
     init();
     jump=1;
@@ -30,6 +31,7 @@ int main() {
     //    }
     }
     std::cout<<(reg[10] & 255)<<std::endl;
+    pred[0].get_suc_rate();
    /* while(1){
          ifm(_jump,_pc);
         if(ifm.instruction==){

@@ -55,93 +55,93 @@ void execute_manager::get() {
 
         case BEQ:
             if(idm.btype->vrs1==idm.btype->vrs2) {
-                if (!pred[idm.btype->_pc & 15u].jump_or_not()) {
+                if (!pred[idm.btype->_pc>>2&7u].jump_or_not()) {
                     pc = idm.btype->_pc + idm.btype->imm;jump=1;
                     idm.kill = ifm.kill= 1;idm.cancel_use();ifm.decoded=1;
                 }
-                pred[idm.btype->_pc & 15u].update(1);
+                pred[idm.btype->_pc>>2&7u].update(1);
             }
             else{
-                if (pred[idm.btype->_pc & 15u].jump_or_not()) {
+                if (pred[idm.btype->_pc>>2&7u].jump_or_not()) {
                     pc = idm.btype->_pc;jump=0;
                     idm.kill = ifm.kill= 1;idm.cancel_use();ifm.decoded=1;
                 }
-                pred[idm.btype->_pc & 15u].update(0);
+                pred[idm.btype->_pc>>2&7u].update(0);
             }break;
         case BNE:
             if(idm.btype->vrs1!=idm.btype->vrs2) {
-                if (!pred[idm.btype->_pc & 15u].jump_or_not()) {
+                if (!pred[idm.btype->_pc>>2&7u].jump_or_not()) {
                     pc = idm.btype->_pc + idm.btype->imm;jump=1;
                     idm.kill = ifm.kill= 1;idm.cancel_use();ifm.decoded=1;
                 }
-                pred[idm.btype->_pc & 15u].update(1);
+                pred[idm.btype->_pc>>2&7u].update(1);
             }
             else{
-                if (pred[idm.btype->_pc & 15u].jump_or_not()) {
+                if (pred[idm.btype->_pc>>2&7u].jump_or_not()) {
                     pc = idm.btype->_pc;jump=0;
                     idm.kill = ifm.kill= 1;idm.cancel_use();ifm.decoded=1;
                 }
-                pred[idm.btype->_pc & 15u].update(0);
+                pred[idm.btype->_pc>>2&7u].update(0);
             }break;
         case BLT:
             if(static_cast<int>(idm.btype->vrs1)<static_cast<int>(idm.btype->vrs2)) {
-                if (!pred[idm.btype->_pc & 15u].jump_or_not()) {
+                if (!pred[idm.btype->_pc>>2&7u].jump_or_not()) {
                     pc = idm.btype->_pc + idm.btype->imm;jump=1;
                     idm.kill = ifm.kill= 1;idm.cancel_use();ifm.decoded=1;
                 }
-                pred[idm.btype->_pc & 15u].update(1);
+                pred[idm.btype->_pc>>2&7u].update(1);
             }
             else{
-                if (pred[idm.btype->_pc & 15u].jump_or_not()) {
+                if (pred[idm.btype->_pc>>2&7u].jump_or_not()) {
                     pc = idm.btype->_pc;jump=0;
                     idm.kill = ifm.kill= 1;idm.cancel_use();ifm.decoded=1;
                 }
-                pred[idm.btype->_pc & 15u].update(0);
+                pred[idm.btype->_pc>>2&7u].update(0);
             }break;
         case BGE:
             if(static_cast<int>(idm.btype->vrs1)>=static_cast<int>(idm.btype->vrs2)) {
-                if (!pred[idm.btype->_pc & 15u].jump_or_not()) {
+                if (!pred[idm.btype->_pc>>2&7u].jump_or_not()) {
                     pc = idm.btype->_pc + idm.btype->imm;jump=1;
                     idm.kill = ifm.kill= 1;ifm.decoded=1;
                 }
-                pred[idm.btype->_pc & 15u].update(1);
+                pred[idm.btype->_pc>>2&7u].update(1);
             }
             else{
-                if (pred[idm.btype->_pc & 15u].jump_or_not()) {
+                if (pred[idm.btype->_pc>>2&7u].jump_or_not()) {
                     pc = idm.btype->_pc;jump=0;
                     idm.kill = ifm.kill= 1;ifm.decoded=1;
                 }
-                pred[idm.btype->_pc & 15u].update(0);
+                pred[idm.btype->_pc>>2&7u].update(0);
             }break;
         case BLTU:
             if(idm.btype->vrs1<idm.btype->vrs2) {
-                if (!pred[idm.btype->_pc & 15u].jump_or_not()) {
+                if (!pred[idm.btype->_pc>>2&7u].jump_or_not()) {
                     pc = idm.btype->_pc + idm.btype->imm;jump=1;
                     idm.kill = ifm.kill= 1;ifm.decoded=1;
                 }
-                pred[idm.btype->_pc & 15u].update(1);
+                pred[idm.btype->_pc>>2&7u].update(1);
             }
             else{
-                if (pred[idm.btype->_pc & 15u].jump_or_not()) {
+                if (pred[idm.btype->_pc>>2&7u].jump_or_not()) {
                     pc = idm.btype->_pc;jump=0;
                     idm.kill = ifm.kill= 1;ifm.decoded=1;
                 }
-                pred[idm.btype->_pc & 15u].update(0);
+                pred[idm.btype->_pc>>2&7u].update(0);
             }break;
         case BGEU:
             if(idm.btype->vrs1>=idm.btype->vrs2) {
-                if (!pred[idm.btype->_pc & 15u].jump_or_not()) {
+                if (!pred[idm.btype->_pc>>2&7u].jump_or_not()) {
                     pc = idm.btype->_pc + idm.btype->imm;jump=1;
                     idm.kill = ifm.kill= 1;ifm.decoded=1;
                 }
-                pred[idm.btype->_pc & 15u].update(1);
+                pred[idm.btype->_pc>>2&7u].update(1);
             }
             else{
-                if (pred[idm.btype->_pc & 15u].jump_or_not()) {
+                if (pred[idm.btype->_pc>>2&7u].jump_or_not()) {
                     pc = idm.btype->_pc;jump=0;
                     idm.kill = ifm.kill= 1;ifm.decoded=1;
                 }
-                pred[idm.btype->_pc & 15u].update(0);
+                pred[idm.btype->_pc>>2&7u].update(0);
             }break;
 
         case LUI:val=idm.utype->imm;break;
