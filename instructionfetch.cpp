@@ -8,7 +8,7 @@
 instruction_fetch_manager ifm;
 void instruction_fetch_manager::get(){
     if(kill==1){
-        kill=0;idm.kill=1;return;
+        kill=0;idm.kill=1;wait=0;decoded=1;return;
     }
     if(mem_clock||decoded!=1)return;
     if(wait){//wait>0||wait==-1
@@ -19,5 +19,5 @@ void instruction_fetch_manager::get(){
     if (!jump)pc += 4;else jump=0;
     _pc=pc;
     instruction = *reinterpret_cast<int *>(memory+pc);
-    if(instruction==0x0ff00513)wait=-1;
+    if(instruction==0x0ff00513)wait=idm.wait=-1;
 }
