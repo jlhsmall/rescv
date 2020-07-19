@@ -5,7 +5,7 @@
 #ifndef RISCV_PREDICTOR_H
 #define RISCV_PREDICTOR_H
 #include <cstdio>
-
+#include "instructiondecode.h"
 class predictor {
 public:
 /*    struct Counter{
@@ -29,12 +29,13 @@ public:
         return cur>=2;
     }
     void update(bool b){
-        suc+=jump_or_not()==b;++tot;
+        //printf("%d %d",idm.btype->_jump,b);std::cout<<std::endl;
+        suc+=idm.btype->_jump==b;++tot;
         cur=nxt[cur][b];
     }
     void get_suc_rate(){
         printf("%.2lf%c\n",100.0*suc/tot,'%');
     }
 };
-extern predictor pred[8];
+extern predictor pred[16];
 #endif //RISCV_PREDICTOR_H

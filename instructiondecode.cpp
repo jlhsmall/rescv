@@ -71,7 +71,7 @@ void instruction_decode_manager::cancel_use(){
 void instruction_decode_manager::get(){
     if(mem_clock)return;
     if(kill==1){
-        kill=0;em.kill=1;return;
+        kill=0;em.kill=1;wait=0;return;
     }
     if(wait){//wait>0||wait==-1
         if(wait>0)--wait,++em.wait;
@@ -158,7 +158,7 @@ void instruction_decode_manager::get(){
             btype->vrs1=get_reg_val(btype->rs1,wait);
             btype->vrs2=get_reg_val(btype->rs2,wait);
             if(wait)wait=0,++em.wait,ifm.decoded=2;
-            if(pred[btype->_pc>>2&7u].jump_or_not())pc=btype->_pc+btype->imm,jump=1;
+            if(btype->_jump=pred[btype->_pc>>2&15u].jump_or_not())pc=btype->_pc+btype->imm,jump=1;
             break;
         case LUI:
         case AUIPC:

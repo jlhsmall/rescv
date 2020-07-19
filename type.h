@@ -31,7 +31,7 @@ public:
 };
 class Btype{
 public:
-    unsigned imm,vrs2,vrs1,rs1,rs2,_pc;
+    unsigned imm,vrs2,vrs1,rs1,rs2,_pc,_jump;
     Btype(const unsigned &instruction);
 };
 class Utype{

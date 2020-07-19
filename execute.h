@@ -19,4 +19,5 @@ public:
     void get();
 };
 extern execute_manager em;
+//extern int cnt;
 #endif //RESCV_EXECUTE_H

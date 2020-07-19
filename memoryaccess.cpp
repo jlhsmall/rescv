@@ -14,7 +14,7 @@ void memory_access_manager::get(){
         --mem_clock;return;
     }
     if(kill==1){
-        kill=0;wbm.kill=1;return;
+        kill=0;wbm.kill=1;wait=0;return;
     }
     if(wait){//wait>0||wait==-1
         if(wait>0)--wait,++wbm.wait;

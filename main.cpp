@@ -10,7 +10,7 @@
 //unsigned  reg2[32];
 int main() {
     //freopen("r.in","r",stdin);
-    //freopen("w2.out","w",stdout);
+   // freopen("w2.out","w",stdout);
     init();
     jump=1;
     while(wbm.wait!=-1){
@@ -24,14 +24,17 @@ int main() {
         idm.get();
         ifm.get();
       //  int i;
-     //   for(i=0;i<32;++i)if(reg[i]!=reg2[i])break;
-    //    if(i<32) {
-     //       for (i = 0; i < 32; ++i)printf("%6d ", reg2[i] = reg[i]);
-      //      std::cout << std::endl;
-    //    }
+      //  for(i=0;i<32;++i)if(reg[i]!=reg2[i])break;
+      //  if(i<32) {
+      //      printf("%d ",++cnt);
+      //      for (i = 0; i < 32; ++i)printf("%6d ", reg2[i] = reg[i]);
+     //       std::cout << std::endl;
+     //   }
+    //    if(cnt==386)
+      //      cnt=386;
     }
     std::cout<<(reg[10] & 255)<<std::endl;
-    //pred[0].get_suc_rate();
+//    pred[0].get_suc_rate();std::cout<<cnt<<std::endl;
    /* while(1){
          ifm(_jump,_pc);
         if(ifm.instruction==){
